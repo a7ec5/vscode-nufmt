@@ -1,0 +1,55 @@
+{
+  "name": "vscode-nufmt",
+  "displayName": "vscode-nufmt",
+  "description": "Formats Nushell documents with nufmt.",
+  "version": "0.0.3",
+  "publisher": "a7ec5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a7ec5/vscode-nufmt.git"
+  },
+  "keywords": [
+    "nushell",
+    "nu",
+    "formatter",
+    "nufmt"
+  ],
+  "engines": {
+    "vscode": "^1.145.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:nushell"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "nufmt Path",
+      "properties": {
+        "nufmt.path": {
+          "type": "string",
+          "default": "nufmt",
+          "scope": "machine-overridable",
+          "description": "The path to the nufmt executable."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "package": "node -e \"require('node:fs').mkdirSync('dist', { recursive: true })\" && npx --yes --package=@vscode/vsce@4 -- vsce package --out dist"
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "@types/vscode": "^1.145.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  }
+}

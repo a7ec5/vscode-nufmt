@@ -1,0 +1,12 @@
+.vscode/**
+src/**
+.gitignore
+scripts/**
+temp/**
+dist/**
+package-lock.json
+*.vsix
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
